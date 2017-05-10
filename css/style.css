@@ -1,0 +1,140 @@
+/* Empty. Add your own CSS if you like */
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+div{
+	font-family: 'Montserrat', sans-serif;
+}
+.logo{
+	text-align: center;
+	padding: 20px 0;
+}
+.loginHeader{
+	text-align: center;
+}
+#login input{
+	padding-top: 0 !important;
+	padding-left: 8px;
+	margin-top: -5px !important;
+	font-size: 14px;
+	color: #aaaaaa;
+}
+#login label {
+	width: 461px;
+	height: 47px;
+	margin-top:20px;
+	border-radius: 5px;
+	border: solid 1px #dedede;
+	background-color: #ffffff;
+}
+#login .padding {
+    padding: 0px !important;
+    width: 461px;
+}
+#login .padding button{
+	margin-top: 20px;
+	background: linear-gradient(96deg, #0f7231, #00a650);
+	border: none;
+	color: #ffffff;
+	box-shadow: 0 10px 20px 0 rgba(28, 129, 63, 0.4);
+}
+
+#login .padding button:hover{
+	box-shadow: 0 20px 20px 0 rgba(28, 129, 63, 0.4);
+}
+.loginForm{
+	margin: auto;
+	width: 60%;
+	padding: 5px;
+}
+.welcmHeader{
+	font-size: 18px;
+	color: #444444;
+	font-family: 'Montserrat', sans-serif;
+}
+.signIn{
+	line-height: 24px;
+	margin: auto;
+	text-align: center !important;
+	width: 420px;
+	font-size: 14px;
+	margin-top: 10px;
+	color: #aaaaaa;
+}
+.forgPassword{
+	float: right;
+	font-size: 14px;
+	color: #aaaaaa;
+	margin: 10px 0;
+}
+.newuser{
+	margin-top: 220px;
+	text-align: center;
+	font-size: 14px;
+	color: #757575;
+}
+.newuser a, a:hover, .exsitUser a, a:hover, .forgotUser a, a:hover, .successReset a, a:hover{
+	text-decoration: none;
+	color: #00925b;
+}
+.bestRole{
+	float: left;
+	font-size: 14px;
+	color: #aaaaaa;
+	margin: 10px 0;
+}
+.button-bar button{
+	background-color: #fcfcfc !important;
+	border-width: none;
+	border-radius: 5px !important;
+	width: 140px;
+	height: 47px;
+	border: 1px solid #d8d8d8 !important;
+	color: #444444 !important;
+}
+.button-bar button:hover{
+	border: 1px solid #00a650 !important;
+}
+.lead{
+	margin:0 20px;
+	border-radius:5px;
+}
+.exsitUser{
+	margin-top: 160px;
+	text-align: center;
+	font-size: 14px;
+	color: #757575;
+}
+.success{
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+.forgotPasHeader{
+	text-align: center;
+	margin-top: 80px;
+
+}
+.forgotUser{
+	margin-top: 225px;
+	text-align: center;
+	font-size: 14px;
+	color: #757575;
+}
+.successReset{
+	margin-top: 210px;
+	text-align: center;
+	font-size: 14px;
+	color: #757575;
+}
+.item-input:hover{
+border: 1px solid #aaaaaa !important;
+}
+.has-errors {
+    border: 1px solid #ff0000 !important;
+    border: 1px solid #ff0000 !important;
+}
+.no-errors {
+    border: 1px solid #00a650 !important;
+    border: 1px solid #00a650 !important;
+}
