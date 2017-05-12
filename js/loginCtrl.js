@@ -2,14 +2,15 @@
 ( function() {
 
       'use strict';
-    myApp.controller('loginCtrl', function($scope) {
-      $scope.haserrorValidation = false;
+    
+myApp.controller('loginCtrl', function($scope) {
+      $scope.pswdblankValidation = false;
+      $scope.emailblankValidation=false;
 
-      var signInSubmit = function(){
-        $scope.user.email = "";
-        $scope.haserrorValidation = true;
-
-      }
+    $scope.signInSubmit = function(){
+        $scope.emailblankValidation=true;
+        $scope.pswdblankValidation = true;
+       }
 
      var myDate = new Date();
         var hrs = myDate.getHours();
