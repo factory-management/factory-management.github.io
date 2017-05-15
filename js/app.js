@@ -28,7 +28,6 @@
         controller: 'loginCtrl'
       })
 
-
         .state('app', {
         url: '/app',
         abstract: true,

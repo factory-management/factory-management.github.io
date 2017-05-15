@@ -5,10 +5,6 @@
     
 myApp.controller('loginCtrl', function($scope) {
       $scope.signInScreen = true;
-      $scope.signUpScreen = false;
-      $scope.forgotPswdScreen = false;
-      $scope.pswdResetScreen = false; 
-      $scope.successSignUpScreen = false;
       $scope.pswdblankValidation = false;
       $scope.emailblankValidation=false;
 
@@ -16,11 +12,27 @@ myApp.controller('loginCtrl', function($scope) {
       $scope.emailblankValidation=true;
       $scope.pswdblankValidation = true;
     }
+    $scope.signUpSubmit = function(){
+      $scope.signUpemailblankValidation=true;
+      $scope.signUpPswdblankValidation = true;
+    }
+    $scope.resetPswd = function(){
+      $scope.resetMailblankValidation=true;
+    }
     $scope.signUp = function(){
-      $scope.signUpScreen = true;
+      $scope.forgotPswdScreen = false;
       $scope.signInScreen = false;
-      
-      alert($scope.signUpScreen);
+      $scope.signUpScreen = true; 
+           /*alert($scope.signUpScreen);*/
+    }
+    $scope.signIn = function(){
+      $scope.signUpScreen = false;
+      $scope.signInScreen = true;
+    }
+    $scope.forgotPswd = function(){
+      $scope.signInScreen = false;
+      $scope.forgotPswdScreen = true;
+      /*alert($scope.signUpScreen);*/
     }
 
      var myDate = new Date();

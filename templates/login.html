@@ -1,9 +1,9 @@
 <ion-view view-title="Login" id="login">
-  <ion-content scroll="false">
+  <ion-content scroll="false" ng-controller="loginCtrl">
     <div class="row">
        <div class="col col-50" id="carousel"></div>
 <!-- Sign In Page start-->
-         <div class = "col col-50" ng-controller="loginCtrl" ng-if="signInScreen"> 
+         <div class = "col col-50" ng-if="signInScreen"> 
               <div class="logo">
                 <img src="img/logo.svg" alt="Heineken">
               </div>
@@ -12,17 +12,17 @@
                   <div class="signIn">Sign In</div>
               </div>
               <div class="loginForm" >
-                <form name="loginForm" ng-submit="$scope.login($scope.user);" novalidate>
+                <form name="loginForm" ng-submit="" novalidate>
                   <div class="list">
                       <label class="item item-input" ng-class="{'has-errors' : emailblankValidation || loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}">
                         <i class="icon ion-android-mail placeholder-icon"></i>
-                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="$scope.user.email" required>
+                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="email" required>
                     </label>
                       <label class="item item-input" ng-class="{'has-errors' : pswdblankValidation || loginForm.password.$invalid && !loginForm.password.$pristine, 'no-errors' : loginForm.password.$valid}">
                         <i class="icon ion-locked placeholder-icon"></i>
-                        <input name="password" type="text" placeholder="Password" ng-model="$scope.user.password" required>
+                        <input name="password" type="text" placeholder="Password" ng-model="password" required>
                       </label>
-                      <div class="forgPassword">Forgot Password?</div>
+                      <div class="forgPassword"><a href="" ng-click="forgotPswd()">Forgot Password?</a></div>
                   </div>
                   <div class="padding">
                       <button type="submit" class="button button-block button-outline button-positive" ng-click="signInSubmit()">Sign in</button>
@@ -34,33 +34,37 @@
 <!-- Sign In Page end-->
 
 <!-- Forgot Password Page start-->  
-        <div class = "col col-50" ng-controller="loginCtrl" ng-if="forgotPswdScreen"> 
-          <div class="logo"><img src="img/logo.png"></div>
+        <div class = "col col-50" ng-if="forgotPswdScreen"> 
+              <div class="logo">
+                <img src="img/logo.svg" alt="Heineken">
+              </div>
               <div class="forgotPasHeader">
                   <div class="welcmHeader">Forgot your Password?</div>
                   <div class="signIn">We'll email you the instructions on how to reset it.</div>
               </div>
               <div class="loginForm" >
-                <form ng-submit="$scope.login($scope.user);" novalidate>
+                <form name="loginForm" ng-submit="" novalidate>
                   <div class="list">
-                      <label class="item item-input" ng-class="{'has-errors' : emailblankValidation || loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}">
+                      <label class="item item-input" ng-class="{'has-errors' : resetMailblankValidation || loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}">
                         <i class="icon ion-android-mail placeholder-icon"></i>
-                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="$scope.user.email" required>
+                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="email" required>
                     </label>
                   </div>
                   <div class="padding">
-                      <button type="submit" class="button button-block button-outline button-positive">Reset Password</button>
+                      <button type="submit" class="button button-block button-outline button-positive" ng-click="resetPswd()">Reset Password</button>
                   </div>
               </form>
-              <div class="forgotUser">Already have an account? <a href="#">Sign In</a></div>
+              <div class="forgotUser">Already have an account? <a href="#" ng-click="signIn()">Sign In</a></div>
             </div>
         </div>
 <!-- Forgot Password Page end--> 
 
 <!-- Sign Up success Page start-->  
 
-        <div class = "col col-50" ng-controller="loginCtrl" ng-if="pswdResetScreen"> 
-          <div class="logo"><img src="img/logo.png"></div>
+        <div class = "col col-50" ng-if="pswdResetScreen"> 
+              <div class="logo">
+                <img src="img/logo.svg" alt="Heineken">
+              </div>
             <div class="success"><img src="img/success.png"></div>
               <div class="loginHeader">
                   <div class="welcmHeader">Password reset sent!</div>
@@ -72,22 +76,24 @@
 
 
 <!-- Sign Up/register Page start-->  
-        <div class = "col col-50" ng-controller="loginCtrl" ng-if="signUpScreen"> 
-          <div class="logo"><img src="img/logo.png"></div>
+        <div class = "col col-50" ng-if="signUpScreen"> 
+              <div class="logo">
+                <img src="img/logo.svg" alt="Heineken">
+              </div>
               <div class="loginHeader">
                   <div class="welcmHeader">Get your own account</div>
                   <div class="signIn">Sign Up. There's more behind the star</div>
               </div>
               <div class="loginForm" >
-                <form ng-submit="$scope.login($scope.user);" novalidate>
+                <form name="loginForm" ng-submit="" novalidate>
                   <div class="list">
-                      <label class="item item-input" ng-class="{'has-errors' : emailblankValidation || loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}">
+                      <label class="item item-input" ng-class="{'has-errors' : signUpemailblankValidation || loginForm.email.$invalid && !loginForm.email.$pristine, 'no-errors' : loginForm.email.$valid}">
                         <i class="icon ion-android-mail placeholder-icon"></i>
-                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="$scope.user.email" required>
+                        <input name="email" type="email" placeholder="IBM w3id / Email" ng-model="email" required>
                     </label>
-                      <label class="item item-input" ng-class="{'has-errors' : pswdblankValidation || loginForm.password.$invalid && !loginForm.password.$pristine, 'no-errors' : loginForm.password.$valid}">
+                      <label class="item item-input" ng-class="{'has-errors' : signUpPswdblankValidation || loginForm.password.$invalid && !loginForm.password.$pristine, 'no-errors' : loginForm.password.$valid}">
                         <i class="icon ion-locked placeholder-icon"></i>
-                        <input name="password" type="text" placeholder="Password" ng-model="$scope.user.password" required>
+                        <input name="password" type="text" placeholder="Password" ng-model="password" required>
                       </label>
                       <div class="bestRole">Which role fits you the best?</div>
                   </div>
@@ -97,18 +103,20 @@
                       <button class="button button-assertive">Manager</button>
                     </div>
                   <div class="padding">
-                      <button type="submit" class="button button-block button-outline button-positive" ng-click="signInSubmit()">Sign up</button>
+                      <button type="submit" class="button button-block button-outline button-positive" ng-click="signUpSubmit()">Sign up</button>
                   </div>
               </form>
-              <div class="exsitUser">Already have an account? <a href="#">Sign In</a></div>
+              <div class="exsitUser">Already have an account? <a href="#" ng-click="signIn()">Sign In</a></div>
             </div>
         </div>
 <!-- Sign Up/register Page end--> 
         
 <!-- Sign Up success Page start-->  
 
-        <div class = "col col-50" ng-controller="loginCtrl" ng-if="successSignUpScreen"> 
-          <div class="logo"><img src="img/logo.png"></div>
+        <div class = "col col-50" ng-if="successSignUpScreen"> 
+              <div class="logo">
+                <img src="img/logo.svg" alt="Heineken">
+              </div>
             <div class="success"><img src="img/success.png"></div>
               <div class="loginHeader">
                   <div class="welcmHeader">Great! Congratulations on signing up</div>
