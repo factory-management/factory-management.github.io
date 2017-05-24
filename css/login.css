@@ -4,18 +4,26 @@ html, body{
 	font-weight: 400;
 	height: 100%;
 }
+body:not(:-moz-handler-blocked) .newuser{
+    padding: 35% 0 5% 0;
+}
+body:not(:-moz-handler-blocked) .exsitUser{
+    padding: 20% 0 7.5% 0;
+}
+body:not(:-moz-handler-blocked) .forgotUser{
+    padding: 43% 0 7.5% 0;
+}
 #login .row, #login .col{
 	padding: 0 !important;
-	height: 100%;
 }
-#carousel{
+#bg{
 	background: url('../img/carousel_1.jpg') no-repeat;
 	background-size: cover;
 	height: auto;
 	width: 100%;	
 }
 .logo{
-	padding: 20px 0 60px 0;
+	padding: 5% 0 10% 0;
 	text-align: center;
 }
 .loginHeader{
@@ -47,7 +55,6 @@ html, body{
 	color: #ffffff;
 	margin-top: 20px;
 }
-
 #login .padding button:hover{
 	box-shadow: 0 20px 30px 0 rgba(28, 129, 63, 0.4);
 }
@@ -81,8 +88,14 @@ html, body{
 	color: #aaaaaa;
 	text-decoration: none;
 }
-.newuser, .forgotUser{
-	padding: 50% 0 15% 0;
+.newuser{
+	padding: 45% 0 6.5% 0;
+	text-align: center;
+	font-size: 14px;
+	color: #757575;
+}
+.forgotUser{
+	padding: 50% 0 11% 0;
 	text-align: center;
 	font-size: 14px;
 	color: #757575;
@@ -109,7 +122,7 @@ html, body{
 .button-bar button:hover{
 	border: 1px solid #00a650 !important;
 }
-.button-bar button:focus{
+.button-bar button.active{
 	border: 1px solid #00a650 !important;
 }
 .lead{
@@ -117,7 +130,7 @@ html, body{
 	border-radius:5px;
 }
 .exsitUser, .successReset{
-	padding: 35% 0 15% 0;
+	padding: 30% 0 15% 0;
 	text-align: center;
 	font-size: 14px;
 	color: #757575;
@@ -129,7 +142,7 @@ html, body{
 }
 .forgotPasHeader{
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 5%;
 }
 .item-input:hover{
 	border: 1px solid #aaaaaa !important;
@@ -156,4 +169,55 @@ html, body{
 #login .ion-locked{
 	background: url('../img/pswd.svg') no-repeat !important;
 	/*background-size: 100% 100%;*/
+}
+
+@media only screen and (max-width: 767px){
+    /* For mobile phones: */
+	#bg{
+	    display: none !important;
+	}
+	.col-50{
+	    -moz-box-flex: 0 !important;
+	    flex: 0 0 100% !important;
+	    max-width: 100% !important;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px){
+	.loginForm{
+		width: 85% !important;
+	}
+	img {
+    	width: 45%;
+	}
+}
+
+@media only screen and (max-width: 617px){
+	.button-bar{
+		display: block !important;
+	}
+	button{
+		min-width: 100% !important;
+	}
+	.lead{
+		margin:10px 0 !important;
+	}
+	.loginForm{
+		width: 75% !important;
+	}
+	/*img {
+    	width: 45%;
+	}*/
+}
+
+@media only screen and (max-width: 1236px) and (min-width: 766px){
+	.button-bar{
+		display: block !important;
+	}
+	button{
+		min-width: 100% !important;
+	}
+	.lead{
+		margin:10px 0 !important;
+	}
 }
