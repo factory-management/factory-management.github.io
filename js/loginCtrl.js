@@ -6,6 +6,9 @@
 myApp.controller('loginCtrl', function($scope, $state) {
     var vm = this;
     vm.signInScreen = true;
+    $scope.active1 = false;
+    $scope.active2 = false;
+    $scope.active3 = false;
     
     var myDate = new Date();
     var hrs = myDate.getHours();
