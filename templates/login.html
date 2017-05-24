@@ -1,7 +1,10 @@
 <ion-view view-title="Login" id="login">
-  <ion-content scroll="false" ng-controller="loginCtrl">
+  <ion-content scroll="true" ng-controller="loginCtrl">
     <div class="row">
-       <div class="col col-50" id="carousel"></div>
+        <div class="col col-50" id="bg">asdgadsfg
+          <!-- <div id="carousel"></div>
+ -->          <!-- <img id="carousel" src="img/carousel_1.jpg"> -->
+        </div>
 <!-- Sign In Page start-->
          <div class = "col col-50" ng-if="vm.signInScreen"> 
               <div class="logo">
@@ -98,9 +101,9 @@
                       <div class="bestRole">Which role fits you the best?</div>
                   </div>
                     <div class="button-bar">
-                      <button class="button button-assertive">Developer</button>
-                      <button class="button button-assertive lead">Lead</button>
-                      <button class="button button-assertive">Manager</button>
+                      <button ng-class="{active : active1}" ng-click="active1 = !active1;active2=false;active3=false">Developer</button>
+                      <button class="lead" ng-class="{active : active2}" ng-click="active2 = !active2;active1=false;active3=false">Lead</button>
+                      <button ng-class="{active : active3}" ng-click="active3 = !active3; active1=false;active2=false">Manager</button>
                     </div>
                   <div class="padding">
                       <button type="submit" class="button button-block button-outline button-positive" ng-click="vm.signUpSubmit()">Sign up</button>
